@@ -135,6 +135,13 @@
             </list>
           </value>
         </entry>
+        <entry key="coverage">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/coverage-1.6.3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="crypto">
           <value>
             <list>
@@ -324,6 +331,13 @@
             </list>
           </value>
         </entry>
+        <entry key="node_preamble">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/node_preamble-2.0.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="package_config">
           <value>
             <list>
@@ -373,6 +387,20 @@
             </list>
           </value>
         </entry>
+        <entry key="shelf_packages_handler">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shelf_packages_handler-3.0.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shelf_static">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shelf_static-1.1.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="shelf_web_socket">
           <value>
             <list>
@@ -398,6 +426,20 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/source_helper-1.3.3/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="source_map_stack_trace">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/source_map_stack_trace-2.1.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="source_maps">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/source_maps-0.10.12/lib" />
             </list>
           </value>
         </entry>
@@ -450,10 +492,24 @@
             </list>
           </value>
         </entry>
+        <entry key="test">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/test-1.24.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="test_api">
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.5.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="test_core">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/test_core-0.5.1/lib" />
             </list>
           </value>
         </entry>
@@ -478,6 +534,13 @@
             </list>
           </value>
         </entry>
+        <entry key="vm_service">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/vm_service-11.6.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="watcher">
           <value>
             <list>
@@ -489,6 +552,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="webkit_inspection_protocol">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/webkit_inspection_protocol-1.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -521,6 +591,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/code_builder-4.5.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/collection-1.17.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/convert-3.1.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/coverage-1.6.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/dart_style-2.3.1/lib" />
@@ -546,6 +617,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/material_color_utilities-0.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/meta-1.9.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/mime-1.0.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/node_preamble-2.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/package_config-2.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.8.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pool-1.5.1/lib" />
@@ -553,9 +625,13 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pubspec_parse-1.2.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/riverpod-2.3.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shelf-1.4.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shelf_packages_handler-3.0.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shelf_static-1.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shelf_web_socket-1.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_gen-1.3.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_helper-1.3.3/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_map_stack_trace-2.1.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_maps-0.10.12/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.9.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/state_notifier-0.7.2+1/lib" />
@@ -563,12 +639,16 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stream_transform-2.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/string_scanner-1.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/term_glyph-1.2.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/test-1.24.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.5.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/test_core-0.5.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/timing-1.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vm_service-11.6.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/watcher-1.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/webkit_inspection_protocol-1.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/yaml-3.1.2/lib" />
       <root url="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/flutter/packages/flutter/lib" />
