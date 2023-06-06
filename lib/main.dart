@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_new/data/count_data.dart';
 import 'package:flutter_new/provider.dart';
+import 'package:flutter_new/view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
@@ -19,19 +20,30 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  MyHomePage(),
+      home:  MyHomePage(ViewModel()),
     );
   }
 }
 
 class MyHomePage extends ConsumerStatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  final ViewModel viewModel;
+  MyHomePage(this.viewModel,{Key? key}) : super(key: key);
 
   @override
   ConsumerState<MyHomePage> createState() => _MyHomePageState();
 }
 
   class _MyHomePageState extends ConsumerState<MyHomePage>{
+
+    late ViewModel _viewModel;
+
+    @override
+    void initState() {
+    super.initState();
+    _viewModel = widget.viewModel;
+    _viewModel.setRef(ref);
+  }
+
     @override
   Widget build(BuildContext context) {
     print('home page');
@@ -49,7 +61,7 @@ class MyHomePage extends ConsumerStatefulWidget {
           children: <Widget>[
             Text(ref.watch(messageProvider)),
             Text(
-              ref.watch(countDataProvider).count.toString(),
+              _viewModel.count,
               style: Theme
                   .of(context)
                   .textTheme
@@ -59,23 +71,11 @@ class MyHomePage extends ConsumerStatefulWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 FloatingActionButton(
-                  onPressed: (){
-                    CountData countData = ref.read(countDataProvider.notifier).state;
-                    ref.read(countDataProvider.notifier).state = countData.copyWith(
-                          count: countData.count + 1,
-                          countUp: countData.countUp + 1,
-                        );
-                  },
+                  onPressed: _viewModel.onIncrease,
                   child: const Icon(CupertinoIcons.add),
                 ),
                 FloatingActionButton(
-                  onPressed: (){
-                    CountData countData = ref.read(countDataProvider.notifier).state;
-                    ref.read(countDataProvider.notifier).state = countData.copyWith(
-                          count: countData.count - 1,
-                          countDown: countData.countDown + 1,
-                        );
-                  },
+                  onPressed: _viewModel.onDecrease,
                   child: const Icon(CupertinoIcons.minus),
                 ),
               ],
@@ -83,21 +83,15 @@ class MyHomePage extends ConsumerStatefulWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(ref.read(countDataProvider.select((value) => value.countUp)).toString()),
-                Text(ref.read(countDataProvider.select((value) => value.countDown)).toString()),
+                Text(_viewModel.countUp),
+                Text(_viewModel.countDown),
               ],
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          ref.read(countDataProvider.notifier).state = const CountData(
-            count: 0,
-            countUp: 0,
-            countDown: 0,
-          );
-        },
+        onPressed: _viewModel.onReset,
         child: const Icon(Icons.refresh),
       ),
     );

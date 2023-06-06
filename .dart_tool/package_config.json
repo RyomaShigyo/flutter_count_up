@@ -206,6 +206,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "golden_toolkit",
+      "rootUri": "file:///Users/shigyoryoma/.pub-cache/hosted/pub.dev/golden_toolkit-0.15.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "graphs",
       "rootUri": "file:///Users/shigyoryoma/.pub-cache/hosted/pub.dev/graphs-2.3.1",
       "packageUri": "lib/",
@@ -282,6 +288,12 @@
       "rootUri": "file:///Users/shigyoryoma/.pub-cache/hosted/pub.dev/mime-1.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "mocktail",
+      "rootUri": "file:///Users/shigyoryoma/.pub-cache/hosted/pub.dev/mocktail-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "node_preamble",
@@ -494,7 +506,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-06-05T13:36:52.686529Z",
+  "generated": "2023-06-06T12:18:56.323363Z",
   "generator": "pub",
   "generatorVersion": "3.0.3"
 }

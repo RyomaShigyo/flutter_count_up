@@ -8,7 +8,7 @@ final titleProvider = Provider<String>((ref){
 });
 
 final messageProvider = Provider<String>((ref){
-  return '何回タップしたか';
+  return 'how many times you tap';
 });
 
 //final countProvider = StateProvider<int>((ref) => 0);
