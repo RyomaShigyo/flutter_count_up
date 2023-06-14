@@ -1,13 +1,19 @@
-import 'package:flutter_new/logic.dart';
+import 'package:flutter_new/data/count_data.dart';
+import 'package:flutter_new/logic/logic.dart';
+import 'package:flutter_new/logic/sound_logic.dart';
 import 'package:flutter_new/provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ViewModel{
   Logic _logic = Logic();
+
+  SoundLogic _soundLogic = SoundLogic();
+
   late WidgetRef _ref;
 
   void setRef(WidgetRef ref){
     this._ref = ref;
+    _soundLogic.load();
   }
 
   get count => _ref.watch(countDataProvider).count.toString();
@@ -18,16 +24,23 @@ class ViewModel{
 
   void onIncrease(){
     _logic.increase();
-    _ref.watch(countDataProvider.notifier).state = _logic.countData;
+    update();
   }
 
   void onDecrease(){
     _logic.decrease();
-    _ref.watch(countDataProvider.notifier).state = _logic.countData;
+    update();
   }
 
   void onReset(){
     _logic.reset();
+    update();
+  }
+
+  void update(){
+    CountData oldValue = _ref.watch(countDataProvider.notifier).state;
     _ref.watch(countDataProvider.notifier).state = _logic.countData;
+    CountData newValue = _ref.watch(countDataProvider.notifier).state;
+    _soundLogic.valeuChanged(oldValue, newValue);
   }
 }

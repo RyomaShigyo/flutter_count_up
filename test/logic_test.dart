@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:flutter_new/logic.dart';
+import 'package:flutter_new/logic/logic.dart';
 
 void main(){
   Logic target = Logic();

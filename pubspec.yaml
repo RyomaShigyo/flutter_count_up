@@ -38,6 +38,7 @@ dependencies:
   flutter_riverpod: ^2.3.6
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.1
+  audioplayers: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -68,8 +69,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
-- assets/
+  assets:
+    - assets/
+    - assets/sounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
