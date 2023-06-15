@@ -1,13 +1,16 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter_new/data/count_data.dart';
+import 'package:flutter_new/logic/count_data_changed_notifier.dart';
 
-class ButtonAnimationLogic{
+class ButtonAnimationLogic with CountDataChangedNotifier {
   late AnimationController _animationController;
   late Animation<double> _animationScale;
 
   get animationScale => _animationScale;
 
-  ButtonAnimationLogic(TickerProvider tickerProvider){
+  ValueChangedCondition startCondition;
+
+  ButtonAnimationLogic(TickerProvider tickerProvider, this.startCondition){
     _animationController = AnimationController(
         vsync: tickerProvider,
         duration: const Duration(milliseconds: 500),
@@ -28,10 +31,10 @@ class ButtonAnimationLogic{
         .whenComplete(() => _animationController.reset());
   }
 
-  void valueChanged(CountData oldData, CountData newData){
-    if(oldData.countUp + 1 != newData.countUp){
-      return;
+  @override
+  void valueChanged(CountData oldValue, CountData newValue){
+    if(startCondition(oldValue, newValue)){
+      start();
     }
-    start();
   }
 }

@@ -1,7 +1,8 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter_new/data/count_data.dart';
+import 'package:flutter_new/logic/count_data_changed_notifier.dart';
 
-class SoundLogic{
+class SoundLogic with CountDataChangedNotifier {
   static const SOUND_DATA_UP = 'sounds/Onoma-Flash08-1(High-Long).mp3';
   static const SOUND_DATA_DOWN = 'sounds/Onoma-Flash09-1(High-Long).mp3';
   static const SOUND_DATA_RESET = 'sounds/Onoma-Flash10-1(Low-1).mp3';
