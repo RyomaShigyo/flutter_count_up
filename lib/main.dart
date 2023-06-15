@@ -33,7 +33,8 @@ class MyHomePage extends ConsumerStatefulWidget {
   ConsumerState<MyHomePage> createState() => _MyHomePageState();
 }
 
-  class _MyHomePageState extends ConsumerState<MyHomePage>{
+  class _MyHomePageState extends ConsumerState<MyHomePage>
+      with TickerProviderStateMixin{
 
     late ViewModel _viewModel;
 
@@ -41,7 +42,7 @@ class MyHomePage extends ConsumerStatefulWidget {
     void initState() {
     super.initState();
     _viewModel = widget.viewModel;
-    _viewModel.setRef(ref);
+    _viewModel.setRef(ref, this);
   }
 
     @override
@@ -72,7 +73,10 @@ class MyHomePage extends ConsumerStatefulWidget {
               children: [
                 FloatingActionButton(
                   onPressed: _viewModel.onIncrease,
-                  child: const Icon(CupertinoIcons.add),
+                  child: ScaleTransition(
+                      scale: _viewModel.animationPlus,
+                      child: const Icon(CupertinoIcons.add)
+                  ),
                 ),
                 FloatingActionButton(
                   onPressed: _viewModel.onDecrease,
