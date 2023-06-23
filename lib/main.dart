@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_new/data/count_data.dart';
+import 'package:flutter_new/logic/button_animation_logic.dart';
 import 'package:flutter_new/provider.dart';
 import 'package:flutter_new/view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -73,9 +74,8 @@ class MyHomePage extends ConsumerStatefulWidget {
               children: [
                 FloatingActionButton(
                   onPressed: _viewModel.onIncrease,
-                  child: ScaleTransition(
-                      scale: _viewModel.animationPlus,
-                      child: const Icon(CupertinoIcons.add)
+                  child: ButtonAnimation(
+                      animationCombination: _viewModel.animationPlusCombination
                   ),
                 ),
                 FloatingActionButton(
@@ -102,6 +102,26 @@ class MyHomePage extends ConsumerStatefulWidget {
             scale: _viewModel.animationReset,
             child: const Icon(Icons.refresh)),
       ),
+    );
+  }
+}
+
+class ButtonAnimation extends StatelessWidget {
+  final AnimationCombination animationCombination;
+  ButtonAnimation({
+    super.key,
+    required this.animationCombination,
+  }) ;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaleTransition(
+        scale: animationCombination.animationScale,
+        child: RotationTransition(
+            turns: animationCombination.animationRotation,
+            child: const Icon(CupertinoIcons.add)
+        )
     );
   }
 }
