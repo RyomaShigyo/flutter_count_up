@@ -75,14 +75,16 @@ class MyHomePage extends ConsumerStatefulWidget {
                 FloatingActionButton(
                   onPressed: _viewModel.onIncrease,
                   child: ButtonAnimation(
-                      animationCombination: _viewModel.animationPlusCombination
+                      animationCombination: _viewModel.animationPlusCombination,
+                    child: const Icon(CupertinoIcons.plus),
                   ),
                 ),
                 FloatingActionButton(
                   onPressed: _viewModel.onDecrease,
-                  child: ScaleTransition(
-                      scale: _viewModel.animationMinus,
-                      child: const Icon(CupertinoIcons.minus)),
+                  child: ButtonAnimation(
+                    animationCombination: _viewModel.animationMinusCombination,
+                    child: const Icon(CupertinoIcons.minus),
+                  ),
                 ),
               ],
             ),
@@ -98,9 +100,10 @@ class MyHomePage extends ConsumerStatefulWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _viewModel.onReset,
-        child: ScaleTransition(
-            scale: _viewModel.animationReset,
-            child: const Icon(Icons.refresh)),
+        child: ButtonAnimation(
+          animationCombination: _viewModel.animationResetCombination,
+          child: const Icon(CupertinoIcons.refresh),
+        ),
       ),
     );
   }
@@ -108,9 +111,11 @@ class MyHomePage extends ConsumerStatefulWidget {
 
 class ButtonAnimation extends StatelessWidget {
   final AnimationCombination animationCombination;
+  final Widget child;
   ButtonAnimation({
     super.key,
     required this.animationCombination,
+    required this.child,
   }) ;
 
 
@@ -120,7 +125,7 @@ class ButtonAnimation extends StatelessWidget {
         scale: animationCombination.animationScale,
         child: RotationTransition(
             turns: animationCombination.animationRotation,
-            child: const Icon(CupertinoIcons.add)
+            child: child,
         )
     );
   }

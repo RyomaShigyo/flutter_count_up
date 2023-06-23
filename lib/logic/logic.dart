@@ -22,4 +22,8 @@ class Logic{
   void reset(){
     _countData = CountData(count: 0, countUp: 0, countDown: 0);
   }
+
+  void init(CountData countData){
+    _countData = countData;
+  }
 }

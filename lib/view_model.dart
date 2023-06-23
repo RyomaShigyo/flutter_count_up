@@ -3,6 +3,7 @@ import 'package:flutter_new/data/count_data.dart';
 import 'package:flutter_new/logic/button_animation_logic.dart';
 import 'package:flutter_new/logic/count_data_changed_notifier.dart';
 import 'package:flutter_new/logic/logic.dart';
+import 'package:flutter_new/logic/shared_preferences_logic.dart';
 import 'package:flutter_new/logic/sound_logic.dart';
 import 'package:flutter_new/provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,13 +37,22 @@ class ViewModel{
     _buttonAnimationLogicPlus = ButtonAnimationLogic(tickerProvider, conditionPlus);
     _buttonAnimationLogicMinus = ButtonAnimationLogic(tickerProvider, conditionMinus);
     _buttonAnimationLogicReset = ButtonAnimationLogic(tickerProvider, conditionReset);
+
     _soundLogic.load();
+
     notifiers = [
       _soundLogic,
       _buttonAnimationLogicPlus,
       _buttonAnimationLogicMinus,
       _buttonAnimationLogicReset,
+      SharedPreferencesLogic()
     ];
+
+    SharedPreferencesLogic.read()
+        .then((value){
+          _logic.init(value);
+          update();
+        });
   }
 
   get count => _ref.watch(countDataProvider).count.toString();
@@ -51,11 +61,9 @@ class ViewModel{
 
   get countDown => _ref.read(countDataProvider.select((value) => value.countDown)).toString();
 
-  get animationPlusScale => _buttonAnimationLogicPlus.animationScale;
-  get animationPlusRotation => _buttonAnimationLogicPlus.animationRotation;
   get animationPlusCombination => _buttonAnimationLogicPlus.animationCombination;
-  get animationMinus => _buttonAnimationLogicMinus.animationScale;
-  get animationReset => _buttonAnimationLogicReset.animationScale;
+  get animationMinusCombination => _buttonAnimationLogicMinus.animationCombination;
+  get animationResetCombination => _buttonAnimationLogicReset.animationCombination;
 
   void onIncrease(){
     _logic.increase();
